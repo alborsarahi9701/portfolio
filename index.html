@@ -1,30 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarahi Albor - Data Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e3a8a;
-            --secondary: #3730a3;
-            --accent: #2563eb;
-            --success: #059669;
-            --text: #1f2937;
-            --light: #f8fafc;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --success: #10b981;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', system-ui, sans-serif;
         }
         
         body {
-            background: var(--light);
-            color: var(--text);
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             font-weight: 400;
         }
@@ -37,169 +40,208 @@
         
         /* Header */
         .header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 60px 0;
+            background: linear-gradient(135deg, #1e40af, #3730a3);
+            padding: 80px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233b82f6' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
         
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
+            font-size: 3rem;
             font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, #e0f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .header .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            color: #cbd5e1;
             font-weight: 400;
             max-width: 500px;
             margin: 0 auto;
-            line-height: 1.5;
         }
         
         /* Value Proposition */
         .value-prop {
-            background: white;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
-            border-bottom: 1px solid #e5e7eb;
+            background: var(--dark-bg);
         }
         
         .value-prop h2 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 15px;
+            font-size: 1.8rem;
             font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
         }
         
         .value-prop p {
-            color: #6b7280;
+            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
         
-        /* Proyectos */
+        /* Projects */
         .projects {
-            padding: 60px 0;
+            padding: 40px 0 80px;
         }
         
         .project-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 12px;
-            padding: 30px;
+            padding: 40px;
             margin-bottom: 30px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid #e5e7eb;
-            transition: all 0.2s ease;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #8b5cf6);
         }
         
         .project-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         
         .project-header {
-            display: flex;
-            justify-content: between;
-            align-items: start;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .project-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
         
         .project-title {
-            flex: 1;
-        }
-        
-        .project-title h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 5px;
+            font-size: 1.5rem;
             font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
         }
         
         .project-context {
-            color: #6b7280;
+            color: var(--text-secondary);
             font-size: 0.95rem;
-            font-style: italic;
-        }
-        
-        .project-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-            padding: 20px;
-            background: #f8fafc;
-            border-radius: 8px;
-        }
-        
-        .metric {
-            text-align: center;
-        }
-        
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--success);
-            display: block;
-        }
-        
-        .metric-label {
-            font-size: 0.85rem;
-            color: #6b7280;
         }
         
         .project-challenge {
-            background: #eff6ff;
+            background: rgba(30, 41, 59, 0.8);
             padding: 20px;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 25px 0;
             border-left: 4px solid var(--accent);
         }
         
         .project-challenge h4 {
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 8px;
             font-size: 1rem;
             font-weight: 600;
         }
         
         .project-challenge p {
-            color: #374151;
+            color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.5;
         }
         
-        .approach-section {
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--success);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .project-tags {
             margin: 25px 0;
         }
         
-        .approach-section h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .approach-section p {
-            color: #4b5563;
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
         
         .project-links {
             display: flex;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 15px;
         }
         
         .btn {
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-primary {
@@ -207,49 +249,62 @@
             color: white;
         }
         
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+        
         .btn-secondary {
             background: transparent;
             color: var(--accent);
-            border: 1.5px solid var(--accent);
+            border: 2px solid var(--accent);
         }
         
-        .btn:hover {
-            transform: translateY(-1px);
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
         }
         
         footer {
             text-align: center;
-            padding: 40px 0;
-            background: var(--primary);
-            color: white;
+            padding: 50px 0;
+            background: #0a0f1c;
+            color: var(--text-secondary);
             font-size: 0.9rem;
+            border-top: 1px solid #334155;
         }
         
-        .tag {
-            display: inline-block;
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-right: 8px;
-            margin-bottom: 8px;
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+            
+            .btn {
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1>Sarahi Albor</h1>
-            <p class="subtitle">Data Analyst especializada en transformar datos complejos en decisiones accionables</p>
+            <div class="header-content">
+                <h1>Sarahi Albor</h1>
+                <p class="subtitle">Data Analyst & Mathematical Strategist</p>
+            </div>
         </div>
     </header>
 
     <section class="value-prop">
         <div class="container">
-            <h2>Resuelvo problemas de negocio mediante análisis riguroso y comunicación clara</h2>
-            <p>Combino formación matemática con comprensión empresarial para entregar insights prácticos y medibles</p>
+            <h2>Transformo datos en ventaja competitiva</h2>
+            <p>Analista con formación matemática, especializada en resolver problemas complejos mediante modelos cuantitativos y pensamiento sistémico.</p>
         </div>
     </section>
 
@@ -258,94 +313,84 @@
             <!-- Proyecto 1 -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">
-                        <h3>Optimización de Presupuesto de Marketing</h3>
-                        <div class="project-context">Proyecto para empresa de e-commerce</div>
-                    </div>
+                    <span class="project-badge">Caso de Estudio</span>
+                    <h3 class="project-title">Optimización de Mix de Marketing</h3>
+                    <div class="project-context">Empresa de E-commerce · Análisis de ROI</div>
                 </div>
                 
                 <div class="project-challenge">
-                    <h4>El reto del negocio</h4>
-                    <p>"Estamos gastando $50,000 mensuales en marketing sin clarity sobre qué canales generan mayor retorno. Necesitamos evidencia, no intuición, para asignar nuestro presupuesto."</p>
-                </div>
-                
-                <div class="approach-section">
-                    <h4>Mi enfoque</h4>
-                    <p>Analicé el ROI histórico por canal, segmenté por tipo de cliente, y construí un modelo de asignación óptima considerando restricciones presupuestarias y objetivos de crecimiento.</p>
+                    <h4>El Desafío</h4>
+                    <p>"$50K mensuales en marketing sin clarity sobre retorno por canal. Decisiones basadas en intuición, no en datos."</p>
                 </div>
                 
                 <div class="project-metrics">
                     <div class="metric">
                         <span class="metric-value">+45%</span>
-                        <span class="metric-label">ROI potencial</span>
+                        <span class="metric-label">ROI Potencial</span>
                     </div>
                     <div class="metric">
                         <span class="metric-value">$28K</span>
-                        <span class="metric-label">Ahorro anual</span>
+                        <span class="metric-label">Ahorro Anual</span>
                     </div>
                     <div class="metric">
                         <span class="metric-value">8:1</span>
-                        <span class="metric-label">ROI mejor canal</span>
+                        <span class="metric-label">ROI Mejor Canal</span>
                     </div>
                 </div>
                 
-                <div>
-                    <span class="tag">Análisis de ROI</span>
-                    <span class="tag">Optimización</span>
+                <div class="project-tags">
                     <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
                     <span class="tag">Power BI</span>
+                    <span class="tag">ROI Analysis</span>
+                    <span class="tag">Optimización</span>
                 </div>
                 
                 <div class="project-links">
-                    <a href="#" class="btn btn-primary">Ver análisis ejecutivo</a>
-                    <a href="#" class="btn btn-secondary">Metodología detallada</a>
+                    <a href="#" class="btn btn-primary">Ver Dashboard</a>
+                    <a href="#" class="btn btn-secondary">Análisis Detallado</a>
                 </div>
             </div>
             
             <!-- Proyecto 2 -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">
-                        <h3>Segmentación de Clientes para Retención</h3>
-                        <div class="project-context">Proyecto para SaaS B2B</div>
-                    </div>
+                    <span class="project-badge">Caso de Estudio</span>
+                    <h3 class="project-title">Segmentación de Clientes</h3>
+                    <div class="project-context">SaaS B2B · Reducción de Churn</div>
                 </div>
                 
                 <div class="project-challenge">
-                    <h4>El reto del negocio</h4>
-                    <p>"Nuestra tasa de churn es del 15% mensual y no entendemos por qué los clientes se van. Necesitamos identificar patrones de abandono y crear estrategias proactivas."</p>
-                </div>
-                
-                <div class="approach-section">
-                    <h4>Mi enfoque</h4>
-                    <p>Implementé análisis RFM avanzado y clustering para identificar 5 segmentos de clientes con comportamientos distintos. Desarrollé señales tempranas de churn y recomendaciones específicas por segmento.</p>
+                    <h4>El Desafío</h4>
+                    <p>"15% de churn mensual sin entender patrones de abandono. Estrategias de retención genéricas e inefectivas."</p>
                 </div>
                 
                 <div class="project-metrics">
                     <div class="metric">
                         <span class="metric-value">-32%</span>
-                        <span class="metric-label">Reducción churn</span>
+                        <span class="metric-label">Reducción de Churn</span>
                     </div>
                     <div class="metric">
                         <span class="metric-value">5</span>
-                        <span class="metric-label">Segmentos clave</span>
+                        <span class="metric-label">Segmentos Clave</span>
                     </div>
                     <div class="metric">
                         <span class="metric-value">+18%</span>
-                        <span class="metric-label">LTV incrementado</span>
+                        <span class="metric-label">LTV Incrementado</span>
                     </div>
                 </div>
                 
-                <div>
+                <div class="project-tags">
+                    <span class="tag">Machine Learning</span>
                     <span class="tag">Clustering</span>
                     <span class="tag">RFM Analysis</span>
-                    <span class="tag">Machine Learning</span>
                     <span class="tag">SQL</span>
+                    <span class="tag">Tableau</span>
                 </div>
                 
                 <div class="project-links">
-                    <a href="#" class="btn btn-primary">Ver segmentación</a>
-                    <a href="#" class="btn btn-secondary">Análisis técnico</a>
+                    <a href="#" class="btn btn-primary">Ver Segmentación</a>
+                    <a href="#" class="btn btn-secondary">Metodología</a>
                 </div>
             </div>
         </div>
@@ -354,7 +399,7 @@
     <footer>
         <div class="container">
             <p>Sarahi Albor · Data Analyst</p>
-            <p>Enfoque en resultados de negocio, respaldados por análisis riguroso</p>
+            <p>Enfoque matemático, resultados empresariales</p>
         </div>
     </footer>
 </body>
