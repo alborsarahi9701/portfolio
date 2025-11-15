@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarahi Albor - Data Analyst</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3730a3;
+            --accent: #2563eb;
+            --success: #059669;
+            --text: #1f2937;
+            --light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        body {
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        /* Value Proposition */
+        .value-prop {
+            background: white;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .value-prop h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .value-prop p {
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+        
+        /* Proyectos */
+        .projects {
+            padding: 60px 0;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+        
+        .project-title {
+            flex: 1;
+        }
+        
+        .project-title h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .project-context {
+            color: #6b7280;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success);
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        
+        .project-challenge {
+            background: #eff6ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .project-challenge h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .project-challenge p {
+            color: #374151;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .approach-section {
+            margin: 25px 0;
+        }
+        
+        .approach-section h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .approach-section p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 1.5px solid var(--accent);
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: var(--primary);
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Sarahi Albor</h1>
+            <p class="subtitle">Data Analyst especializada en transformar datos complejos en decisiones accionables</p>
+        </div>
+    </header>
+
+    <section class="value-prop">
+        <div class="container">
+            <h2>Resuelvo problemas de negocio mediante análisis riguroso y comunicación clara</h2>
+            <p>Combino formación matemática con comprensión empresarial para entregar insights prácticos y medibles</p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>Optimización de Presupuesto de Marketing</h3>
+                        <div class="project-context">Proyecto para empresa de e-commerce</div>
+                    </div>
+                </div>
+                
+                <div class="project-challenge">
+                    <h4>El reto del negocio</h4>
+                    <p>"Estamos gastando $50,000 mensuales en marketing sin clarity sobre qué canales generan mayor retorno. Necesitamos evidencia, no intuición, para asignar nuestro presupuesto."</p>
+                </div>
+                
+                <div class="approach-section">
+                    <h4>Mi enfoque</h4>
+                    <p>Analicé el ROI histórico por canal, segmenté por tipo de cliente, y construí un modelo de asignación óptima considerando restricciones presupuestarias y objetivos de crecimiento.</p>
+                </div>
+                
+                <div class="project-metrics">
+                    <div class="metric">
+                        <span class="metric-value">+45%</span>
+                        <span class="metric-label">ROI potencial</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">$28K</span>
+                        <span class="metric-label">Ahorro anual</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">8:1</span>
+                        <span class="metric-label">ROI mejor canal</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="tag">Análisis de ROI</span>
+                    <span class="tag">Optimización</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Power BI</span>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary">Ver análisis ejecutivo</a>
+                    <a href="#" class="btn btn-secondary">Metodología detallada</a>
+                </div>
+            </div>
+            
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>Segmentación de Clientes para Retención</h3>
+                        <div class="project-context">Proyecto para SaaS B2B</div>
+                    </div>
+                </div>
+                
+                <div class="project-challenge">
+                    <h4>El reto del negocio</h4>
+                    <p>"Nuestra tasa de churn es del 15% mensual y no entendemos por qué los clientes se van. Necesitamos identificar patrones de abandono y crear estrategias proactivas."</p>
+                </div>
+                
+                <div class="approach-section">
+                    <h4>Mi enfoque</h4>
+                    <p>Implementé análisis RFM avanzado y clustering para identificar 5 segmentos de clientes con comportamientos distintos. Desarrollé señales tempranas de churn y recomendaciones específicas por segmento.</p>
+                </div>
+                
+                <div class="project-metrics">
+                    <div class="metric">
+                        <span class="metric-value">-32%</span>
+                        <span class="metric-label">Reducción churn</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">5</span>
+                        <span class="metric-label">Segmentos clave</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">+18%</span>
+                        <span class="metric-label">LTV incrementado</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="tag">Clustering</span>
+                    <span class="tag">RFM Analysis</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">SQL</span>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary">Ver segmentación</a>
+                    <a href="#" class="btn btn-secondary">Análisis técnico</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Sarahi Albor · Data Analyst</p>
+            <p>Enfoque en resultados de negocio, respaldados por análisis riguroso</p>
+        </div>
+    </footer>
+</body>
+</html>
